@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { users } from './mock-users';
 import { USER } from './user-interface';
+import { UserService } from './user.service';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +8,16 @@ import { USER } from './user-interface';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  constructor(private userService:UserService){}
+  ngOnInit(): void {
+    this.getUsers();
+  }
   title = 'user-manager';
-  users:USER[]=users;
+  users:USER[]=[];
   selectedUser?:USER;
+  getUsers():void{
+    this.users=this.userService.getUsers();
+  }
   select(user:USER){
     this.selectedUser=user;
   }
