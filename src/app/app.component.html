@@ -5,32 +5,12 @@
       <input type="text" placeholder="user age" />
       <button>add</button>
     </section>
-    <section class="user-details">
-      <p>User Name: <span>name1</span></p>
-      <p>User Age: <span>age1</span></p>
+    <section class="user-details" *ngIf="selectedUser">
+      <p>User Name: <span>{{selectedUser.name}}</span></p>
+      <p>User Age: <span>{{selectedUser.age}}</span></p>
     </section>
   </section>
   <section>
-    <div>name1</div>
-    <div>name2</div>
-    <div>name3</div>
-    <div>name1</div>
-    <div>name2</div>
-    <div>name3</div>
-    <div>name1</div>
-    <div>name2</div>
-    <div>name3</div>
-    <div>name1</div>
-    <div>name2</div>
-    <div>name3</div>
-    <div>name1</div>
-    <div>name2</div>
-    <div>name3</div>
-    <div>name1</div>
-    <div>name2</div>
-    <div>name3</div>
-    <div>name1</div>
-    <div>name2</div>
-    <div>name3</div>
+    <div *ngFor="let user of users" (click)="select(user)" [class.selected]="user === selectedUser">{{user.name}}</div>
   </section>
 </article>

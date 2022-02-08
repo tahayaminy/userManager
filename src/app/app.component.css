@@ -28,6 +28,7 @@ article > section > div {
     padding: 10px;
     border-radius: 5px;
     width: 50%;
+    cursor: pointer;
 }
 article > section > .add-user {
     display: flex;
@@ -52,7 +53,7 @@ article > section > .add-user > button {
 article > section > .user-details {
     background-color: white;
     margin-top: 150px; 
-    padding: 5px;
+    padding: 0 25px;
     border-radius: 5px;
     width: 50%;
     height: 150px;
@@ -62,4 +63,8 @@ article > section > .user-details {
 }
 article > section > .user-details > p {
     margin: 10px 0;
+}
+.selected{
+  background-color: black !important;
+  color: white;
 }
