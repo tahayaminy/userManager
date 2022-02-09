@@ -1,9 +1,15 @@
 <article>
   <section>
     <section class="add-user">
-      <input type="text" placeholder="user name" />
-      <input type="text" placeholder="user age" />
-      <button>add</button>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>User name</mat-label>
+        <input matInput placeholder="Ex. Json">
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>User age</mat-label>
+        <input matInput placeholder="Ex. 25">
+      </mat-form-field>
+      <button mat-raised-button color="primary">add</button>
     </section>
     <section class="user-details" *ngIf="selectedUser">
       <p>User Name: <span>{{selectedUser.name}}</span></p>
@@ -11,6 +17,6 @@
     </section>
   </section>
   <section>
-    <div *ngFor="let user of users" (click)="select(user)" [class.selected]="user === selectedUser">{{user.name}}</div>
+    <mat-card class="card"  *ngFor="let user of users" (click)="select(user)" [class.selected]="user === selectedUser">{{user.name}}</mat-card>
   </section>
 </article>

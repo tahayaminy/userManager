@@ -1,9 +1,9 @@
 article {
   display: flex;
   align-items: center;
-  background-color: aqua;
   width: 100%;
   height: 100vh;
+  background-color: rgb(235, 235, 235);
 }
 article > section {
   width: 50%;
@@ -22,8 +22,7 @@ article > section {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
-article > section > div {
-    background-color: white;
+article > section > .card {
     margin: 10px;
     padding: 10px;
     border-radius: 5px;
@@ -36,14 +35,12 @@ article > section > .add-user {
     width: 50%;
 }
 article > section > .add-user > input {
-    background-color: white;
     margin: 5px 0;
     padding: 10px;
     border-radius: 5px;
     width: 30%;
 }
 article > section > .add-user > button {
-    background-color: white;
     margin: 10px 0; 
     padding: 5px;
     border-radius: 5px;
@@ -51,7 +48,8 @@ article > section > .add-user > button {
     justify-self: flex-end;
 }
 article > section > .user-details {
-    background-color: white;
+    background-color: #f44336;
+    color: #fff;
     margin-top: 150px; 
     padding: 0 25px;
     border-radius: 5px;
@@ -63,8 +61,8 @@ article > section > .user-details {
 }
 article > section > .user-details > p {
     margin: 10px 0;
+    font-weight: 500;
 }
 .selected{
-  background-color: black !important;
-  color: white;
+  border-left: 5px solid #ff4081;
 }
