@@ -1,4 +1,3 @@
-import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 import { Component } from '@angular/core';
 import { MessageService } from './message.service';
 import { USER } from './user-interface';
