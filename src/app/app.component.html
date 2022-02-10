@@ -3,13 +3,14 @@
     <section class="add-user">
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>User name</mat-label>
-        <input matInput placeholder="Ex. Json">
+        <input #userName matInput placeholder="Ex. Json">
       </mat-form-field>
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>User age</mat-label>
-        <input matInput placeholder="Ex. 25">
+        <input type="number" min="18" max="120" #userAge matInput placeholder="Ex. 25">
       </mat-form-field>
-      <button mat-raised-button color="primary">add</button>
+      <button *ngIf="!update.status" (click)="addUser()" mat-raised-button color="primary">add</button>
+      <button *ngIf="update.status" (click)="editUser()" mat-raised-button color="primary">edit</button>
     </section>
     <section class="user-details animate__animated animate__zoomInDown" *ngIf="selectedUser">
       <p>User Name: <span>{{selectedUser.name}}</span></p>
@@ -17,6 +18,10 @@
     </section>
   </section>
   <section>
-    <mat-card class="card"  *ngFor="let user of users" (click)="select(user)" [class.selected]="user === selectedUser">{{user.name}}</mat-card>
+    <mat-card class="card"  *ngFor="let user of users" [class.selected]="user === selectedUser">
+      <span (click)="select(user)">{{user.name}}</span>
+      <span (click)="transferUser(user)" class="fas fa-pencil-alt"></span>
+      <span (click)="deleteUser(user.id)" class="fas fa-trash-alt"></span>
+    </mat-card>
   </section>
 </article>

@@ -22,11 +22,33 @@ article > section {
 
 article > section > .card {
     margin: 10px;
-    padding: 10px;
+    padding: 0 16px;
     border-radius: 5px;
     width: 50%;
-    cursor: pointer;
     font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+article > section > .card > span{
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+article > section > .card > span:first-child{
+  margin-right: auto;
+  height: 40px;
+}
+
+article > section > .card > span:nth-child(2),article > section > .card > span:nth-child(3){
+  color: #00000042;
+  transition: .25s ease-out;
+  margin: 0 3px;
+}
+article > section > .card > span:nth-child(2):hover{
+  color: #ff4081;
+}
+article > section > .card > span:nth-child(3):hover{
+  color: #f44336;
 }
 article > section > .add-user {
     display: flex;

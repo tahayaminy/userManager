@@ -20,8 +20,17 @@ export class UserService {
 
   //HTTP MODULES FOR APIs
   url="http://localhost:3000/users";
-  httpOptions=new HttpHeaders({'Content-Type': 'application/json'});
+  httpOptions={headers:new HttpHeaders({'Content-Type': 'application/json'})};
   getUsers():Observable<USER[]>{
     return this.http.get<USER[]>(this.url)
+  }
+  addUser(user:USER):Observable<USER>{
+    return this.http.post<USER>(this.url , user , this.httpOptions)
+  }
+  deleteUser(id:number){
+    return this.http.delete<USER>(this.url+'/'+id,this.httpOptions);
+  }
+  editUser(user:USER){
+    return this.http.put<USER>(this.url+'/'+user.id , user , this.httpOptions);
   }
 }
