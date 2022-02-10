@@ -15,14 +15,11 @@ article > section {
   overflow: auto;
   height: 100vh;
 }
-article > section::-webkit-scrollbar {
+/* article > section::-webkit-scrollbar {
   display: none;
-}
+} */
 /* Hide scrollbar for IE, Edge and Firefox */
-article > section {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
+
 article > section > .card {
     margin: 10px;
     padding: 10px;
@@ -68,4 +65,26 @@ article > section > .user-details > p {
 .selected{
   border-left: 5px solid #ff4081;
   width: calc(50% - 5px) !important;
+}
+@media only screen and (max-width:768px){
+  article {
+    display: block;
+  }
+  article > section {
+    overflow: auto;  
+    border: 2.5px solid #0000001f;
+    width: calc(100% - 5px);
+  }
+  article > section:first-child {
+    padding: 30px 0 10px 0;
+    height: calc(60vh - 40px);
+    border-bottom: none;
+  }
+  article > section:last-child {
+    padding-top: 100px;
+    height: calc(40vh - 107.5px);
+  }
+  article > section > .user-details {
+    margin-top: 20px;
+}
 }
