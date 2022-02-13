@@ -20,7 +20,9 @@ export class UserService {
 
   //HTTP MODULES FOR APIs
   url="http://localhost:3000/users";
+
   httpOptions={headers:new HttpHeaders({'Content-Type': 'application/json'})};
+  
   getUsers():Observable<USER[]>{
     return this.http.get<USER[]>(this.url)
   }

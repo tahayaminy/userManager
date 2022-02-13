@@ -2,13 +2,8 @@
   "users": [
     {
       "id": 1,
-      "name": "taha",
-      "age": "20"
-    },
-    {
-      "id": 2,
-      "name": "bardia",
-      "age": "18"
+      "name": "taha yaminy",
+      "age": "21"
     }
   ]
 }
